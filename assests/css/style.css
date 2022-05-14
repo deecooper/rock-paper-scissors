@@ -2,7 +2,7 @@ h1 {
     color: #ee3538;
     font-family: 'Luckiest Guy', cursive;
     -webkit-text-stroke: black 1px;
-    font-size: 80px;
+    font-size: 50px;
     margin-top: 20px;
 
 }
@@ -30,8 +30,32 @@ html {
     color: white;
     background-color: #ee3538;
     font-family: 'Luckiest Guy', cursive;
-    font-size: 30px;
+    font-size: 25px;
     border-radius: 5px;
-    width: 100px;
-    height: 50px;
+    width: 125px;
+    height: 40px;
+    display: inline-block;
+    
+}
+
+#button-area {
+    
+    width: 50%;
+
+
+}
+
+.btn1:hover {
+    background-color: #f89c44;
+}
+
+.game-area {
+    width: 30%;
+    
+
+}
+
+.game-area img {
+    width: 80%;
+    margin: auto;
 }
