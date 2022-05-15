@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,23 +17,29 @@
     <div class="game-container">
     <h1>Rock Paper Scissors</h1>
     <div id="inner-container-left">
-    <h2>You</h2>
+        <!--player choice-->
+    <h2>You<span id="player-choice"></span></h2>
     <div class="image-area"><img src="assests/images/scissors.png"></div>
     <div id="button-area">
     
-    <div class="btn1">rock</div>
-    <div class="btn1">paper</div>
-    <div class="btn1">scissors</div>
+    <button class="btn1" id="rock">rock</button>
+    <button class="btn1" id="paper">paper</button>
+    <button class="btn1" id="scissors">scissors</button>
 </div>
 </div>
 <div id="inner-container-right">
     
 
-
-<h2>Computer</h2>
+<!--Computer choice-->
+<h2>Computer<span id ="computer-choice"></span></h2>
 <div class="image-area"><img src="assests/images/rock.png"></div>
     </div>
-    <h3>Score :</h3>
+    <h3>Score :<span id="score"></span></h3>
     </div>
+
+    <script src="assests/js/script.js"></script>
+
+
+
 </body>
 </html>
