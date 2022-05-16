@@ -10,3 +10,7 @@ choices.forEach(choice => choice.addEventListener("click", (e) => {
 
 }
 ));
+
+function computerSelection() {
+    let randomNumber = Math.random() * 3
+}

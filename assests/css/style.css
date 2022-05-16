@@ -19,6 +19,37 @@ h3 {
     font-size: 30px;
 }
 
+#main-title {
+    font-size: 80px;
+    margin-top: 60px;
+}
+
+.play-button {
+    color: white;
+    background-color: #ee3538;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 35px;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    display: inline-block;
+    
+
+}
+
+.play-button:hover {
+    background-color: #f89c44;
+
+}
+
+
+.play-button a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
 html { 
     background: url(../images/background.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
