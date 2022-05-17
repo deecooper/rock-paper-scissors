@@ -19,6 +19,13 @@ h3 {
     font-size: 30px;
 }
 
+p {
+    font-size: 20px;
+    font-family: 'Luckiest Guy', cursive;
+    color: black;
+
+}
+
 #main-title {
     font-size: 80px;
     margin-top: 60px;
