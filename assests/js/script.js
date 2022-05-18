@@ -1,13 +1,17 @@
 let computerChoiceDisplay = document.getElementById("computer-choice");
 let playerChoice = document.getElementById("player-choice");
-let scores = document.getElementById("score");
+let playerScoreDisplay = document.getElementById("player-score");
+let computerScoreDisplay = document.getElementById("computer-score");
+
 let resultDisplay = document.getElementById("result")
 let choices = document.querySelectorAll("button");
 let scoreDisplay = document.getElementById("score")
 let playerSelection;
 let computerChoice;
-let score = 0;
+let computerScore = 0;
+let playerScore = 0;
 let result;
+let gameCompleted = false;
 
 let gameIcons = {
     rock: "./images/rock.png",
@@ -20,6 +24,7 @@ choices.forEach(choice => choice.addEventListener("click", (e) => {
     playerChoice.innerHTML = playerSelection;
     computerSelection();
     getResult();
+    getScore();
 
 }));
 
@@ -47,9 +52,10 @@ function getResult() {
             result = "Its a draw";
         } else if (computerChoice === "scissors") {
             result = "You Won";
-            score++;
+            playerScore++;
         } else if (computerChoice === "paper") {
             result = "You lose";
+            computerScore++;
 
         }
 
@@ -60,9 +66,10 @@ function getResult() {
             result = "Its a draw";
         } else if (computerChoice === "rock") {
             result = "You Won";
-            score++;
+            playerScore++;
         } else if (computerChoice === "scissors") {
             result = "You lose";
+            computerScore++;
 
         }
     }
@@ -72,14 +79,30 @@ function getResult() {
             result = "Its a draw";
         } else if (computerChoice === "paper") {
             result = "You Won";
-            score++;
+            playerScore++;
         } else if (computerChoice === "rock") {
             result = "You lose";
+            computerScore++;
 
         }
 
     }
 
     resultDisplay.innerHTML = result;
-    scoreDisplay.innerHTML = score;
+    playerScoreDisplay.innerHTML = playerScore;
+    computerScoreDisplay.innerHTML = computerScore;
+
+}
+
+
+function getScore() {
+    if (playerScore === 10 && computerScore < 10) {
+        gameCompleted = true;
+        window.location.replace("game-finished.html");
+   
+    } else if (playerScore < 10 && computerScore === 10){
+        gameCompleted = true;
+        window.location.replace("game-finished.html");
+    }
+
 }
