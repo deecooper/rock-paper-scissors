@@ -1,12 +1,12 @@
+//Global Variables
 let computerChoiceDisplay = document.getElementById("computer-choice");
-let playerChoice = document.getElementById("player-choice");
+let playerChoiceDisplay = document.getElementById("player-choice");
 let playerScoreDisplay = document.getElementById("player-score");
 let computerScoreDisplay = document.getElementById("computer-score");
-
 let resultDisplay = document.getElementById("result")
-let choices = document.querySelectorAll("button");
+let buttonChoices = document.querySelectorAll("button");
 let scoreDisplay = document.getElementById("score")
-let playerSelection;
+let playerChoice;
 let computerChoice;
 let computerScore = 0;
 let playerScore = 0;
@@ -17,11 +17,16 @@ let gameIcons = {
     rock: "./images/rock.png",
     scissors: "./images/scissors.png",
     paper: "./images/paper.png"
+
 };
 
-choices.forEach(choice => choice.addEventListener("click", (e) => {
-    playerSelection = e.target.id;
-    playerChoice.innerHTML = playerSelection;
+
+
+
+//
+buttonChoices.forEach(buttonChoice => buttonChoice.addEventListener("click", (e) => {
+    playerChoice = e.target.id;
+    playerChoiceDisplay.innerHTML = playerChoice;
     computerSelection();
     getResult();
     getScore();
@@ -47,7 +52,7 @@ function computerSelection() {
 }
 
 function getResult() {
-    if (playerSelection === "rock") {
+    if (playerChoice === "rock") {
         if (computerChoice === "rock") {
             result = "Its a draw";
         } else if (computerChoice === "scissors") {
@@ -61,7 +66,7 @@ function getResult() {
 
     }
 
-    if (playerSelection === "paper") {
+    if (playerChoice === "paper") {
         if (computerChoice === "paper") {
             result = "Its a draw";
         } else if (computerChoice === "rock") {
@@ -74,7 +79,7 @@ function getResult() {
         }
     }
 
-    if (playerSelection === "scissors") {
+    if (playerChoice === "scissors") {
         if (computerChoice === "scissors") {
             result = "Its a draw";
         } else if (computerChoice === "paper") {
@@ -98,11 +103,20 @@ function getResult() {
 function getScore() {
     if (playerScore === 10 && computerScore < 10) {
         gameCompleted = true;
+        result = "You Won the game";
+        setTimeout(function () {
+
         window.location.replace("game-finished.html");
+        }, 3000)
    
     } else if (playerScore < 10 && computerScore === 10){
         gameCompleted = true;
-        window.location.replace("game-finished.html");
+        result = "You Lost the game";
+        setTimeout(function () {
+
+            window.location.replace("game-finished.html");
+            }, 2000)
+
     }
 
 }

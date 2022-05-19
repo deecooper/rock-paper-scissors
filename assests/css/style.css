@@ -131,3 +131,16 @@ html {
 #score {
     display: inline-flex;
 }
+
+#game-over-title {
+    font-size: 100px;
+    margin-top: 90px;
+}
+
+#play-again-btn {
+    width: 200px;
+}
+
+#exit-btn {
+    width: 200px;
+}
